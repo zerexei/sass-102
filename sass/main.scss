@@ -2,11 +2,12 @@
   - max of 2 dept
   - never use !globals/!important
 */
-@import 'mixins';
 @import 'variables';
+@import 'mixins';
+@import 'functions';
 
 body {
-  background-color: #4c4c4c;
+  background-color: #c4c4c4;
   font-size: 16px;
 }
 
@@ -21,7 +22,11 @@ body {
 
 .nav {
   // $color-tertiary: red !global; // make global variable (!NOTE: never use, hard to maintain)
-  background-color: $color-primary;
+  // built-in functions
+  background-color: lighten(black, 25%);
+  background-color: darken(white, 75%);
+  background-color: transparentize(black, 0.25);
+  background-color: mix(blue, red, 25%);
 
   ul {
     li {
@@ -41,6 +46,12 @@ body {
   h2 {
     // @include heading-style($font-lg);
     @extend .heading;
+  }
+
+  p {
+    font-size: $font-sm;
+    // font-size: font-size($font-sm);
+    font-size: font-size();
   }
 }
 .footer {

@@ -1,0 +1,4 @@
+// custom function w/ default value args
+@function font-size($size: 1rem) {
+  @return $size * 2;
+}
