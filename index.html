@@ -6,10 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="/sass/main.scss" />
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <!-- HEADER -->
+      <header class="header">
+        <!-- BRAND -->
+        <div class="brand">
+          <!-- LOGO -->
+          <a href="#" class="logo">
+            <span class="icon" data-size="md"></span>
+          </a>
+
+          <!-- BRAND INFO -->
+          <div>
+            <h1 class="main-name">John</h1>
+            <p class="sub-name">Restaurant</p>
+          </div>
+        </div>
+
+        <div class="header-banner">
+          <h1 class="main-heading">Welcome</h1>
+          <h3 class="sub-heading">Try Great John Dishes</h3>
+          <button class="main-btn">Reservation</button>
+        </div>
+      </header>
+      <main></main>
+      <footer></footer>
+    </div>
     <script type="module" src="/main.js"></script>
   </body>
 </html>

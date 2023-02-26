@@ -1,0 +1,50 @@
+// VARIABLES
+$color-primary: lightskyblue;
+$color-secondary: lightgray;
+$color-danger: crimson;
+$color-warning: gold;
+$color-dark: #000;
+$color-light: #fff;
+
+$font-anton: 'Anton', sans-serif;
+$font-montserrat: 'Montserrat', sans-serif;
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  background-color: #4c4c4c;
+
+  font-family: $font-montserrat;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+// MIXINS
+@mixin flex($justify: flex-start, $align: flex-start) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin border($color: $color-primary, $radius: 0) {
+  border: 3px solid $color;
+  border-radius: $radius;
+}

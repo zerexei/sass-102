@@ -1,0 +1,24 @@
+@import 'base';
+@import 'components';
+@import 'layouts';
+
+.bug {
+  border: 1px solid red;
+}
+.hero-icon {
+  height: 100%;
+  width: 100%;
+}
+
+.icon-sm {
+  height: 2.5rem;
+  width: 2.5rem;
+}
+.icon-md {
+  height: 4rem;
+  width: 4rem;
+}
+.icon-lg {
+  height: 6.5rem;
+  width: 6.5rem;
+}
