@@ -1,6 +1,6 @@
 .logo {
   @include flex(center, center);
-  @include border($color-primary, 50%);
+  @include border($color-primary, $width: 3px, $radius: 50%);
   padding: 1rem;
 }
 
@@ -60,9 +60,13 @@
 
 .card {
   position: relative;
-  width: 33.3333%;
   height: 30vw; // on resize, height reduce
   overflow: hidden;
+  width: 75%;
+
+  @include md {
+    width: 33.3333%;
+  }
 
   &:hover .card-overlay {
     left: 0;

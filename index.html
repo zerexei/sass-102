@@ -18,7 +18,7 @@
     <script src="//unpkg.com/alpinejs" defer></script>
   </head>
   <body>
-    <div id="app">
+    <div id="app" x-init="{ count: 0 }">
       <!-- HEADER -->
       <header class="header">
         <!-- BRAND -->
@@ -44,7 +44,7 @@
       </header>
       <!-- End of Header -->
 
-      <main x-init="{ count: 0 }">
+      <main>
         <!-- About Us -->
         <section class="about-us">
           <div class="about-us-left">
@@ -95,7 +95,42 @@
         </section>
         <!-- End of Gallery -->
       </main>
-      <footer></footer>
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        <!-- Footer Header -->
+        <div class="footer-header">
+          <!-- Logo -->
+          <a href="#" class="logo">
+            <span class="icon" data-size="md"></span>
+          </a>
+
+          <!-- Brand Info -->
+          <div>
+            <h1 class="main-name">John</h1>
+            <p class="sub-name">Restaurant</p>
+          </div>
+        </div>
+
+        <div class="footer-social-media">
+          <ul class="social-media">
+            <template x-for="n in [1,2,3]">
+              <li class="social-media-item">
+                <a href="#" class="social-media-link">
+                  <span class="icon" data-size="xs"></span>
+                </a>
+              </li>
+            </template>
+          </ul>
+        </div>
+
+        <div class="footer-copyright">
+          <p class="footer-copyright-paragraph">
+            &copy; Copyright. Restaurant "John Doe". All Rights reserved 2023
+          </p>
+        </div>
+      </footer>
+      <!-- End of Footer -->
     </div>
     <script type="module" src="/main.js"></script>
   </body>

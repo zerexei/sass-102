@@ -52,7 +52,7 @@ img {
   flex-direction: $direction;
 }
 
-@mixin border($color: $color-primary, $width: 3px, $radius: 0) {
+@mixin border($color: $color-primary, $radius: 0, $width: 1px) {
   border: $width solid $color;
   border-radius: $radius;
 }
