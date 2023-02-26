@@ -2,29 +2,8 @@
   - max of 2 dept
   - never use !globals/!important
 */
-
-// VARIABLES
-$color-primary: lightskyblue;
-$color-secondary: lightgray;
-$color-danger: crimson;
-$color-warning: gold;
-$color-black: #000;
-
-$font-sm: 0.875rem;
-$font-normal: 1rem;
-$font-md: 1.25rem;
-$font-lg: 1.5rem;
-
-// MIXINS
-@mixin heading-style($font-size) {
-  font-size: $font-size;
-  color: $color-secondary;
-  text-align: center;
-}
-
-@mixin transition($params...) {
-  transition: $params;
-}
+@import 'mixins';
+@import 'variables';
 
 body {
   background-color: #4c4c4c;
@@ -33,6 +12,11 @@ body {
 
 .bug {
   border: 1px solid red;
+}
+.heading {
+  color: $color-primary;
+  font-size: $font-lg;
+  text-align: center;
 }
 
 .nav {
@@ -52,9 +36,11 @@ body {
     }
   }
 }
+
 .banner {
   h2 {
-    @include heading-style($font-lg);
+    // @include heading-style($font-lg);
+    @extend .heading;
   }
 }
 .footer {
