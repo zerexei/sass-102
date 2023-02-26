@@ -32,7 +32,8 @@ h3,
 h4,
 h5,
 h6,
-p {
+p,
+figure {
   margin: 0;
   padding: 0;
 }
@@ -51,8 +52,8 @@ img {
   flex-direction: $direction;
 }
 
-@mixin border($color: $color-primary, $radius: 0) {
-  border: 3px solid $color;
+@mixin border($color: $color-primary, $width: 3px, $radius: 0) {
+  border: $width solid $color;
   border-radius: $radius;
 }
 
@@ -60,4 +61,10 @@ img {
   @media (min-width: 768px) {
     @content;
   }
+}
+
+// PLACEHOLDER
+%full-space {
+  width: 100%;
+  height: 100%;
 }
