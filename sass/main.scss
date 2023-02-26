@@ -14,7 +14,14 @@ body {
 .bug {
   border: 1px solid red;
 }
-.heading {
+// .heading {
+//   color: $color-primary;
+//   font-size: $font-lg;
+//   text-align: center;
+// }
+
+// PLACEHOLDERS
+%heading {
   color: $color-primary;
   font-size: $font-lg;
   text-align: center;
@@ -45,7 +52,8 @@ body {
 .banner {
   h2 {
     // @include heading-style($font-lg);
-    @extend .heading;
+    // @extend .heading;
+    @extend %heading;
   }
 
   p {
