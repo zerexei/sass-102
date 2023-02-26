@@ -30,3 +30,36 @@
     @include header-center(50%);
   }
 }
+
+.about-us {
+  height: 90vh;
+  padding: 0 2rem;
+  @include md {
+    @include flex($align: center);
+    gap: 1rem;
+  }
+
+  .stars {
+    color: gold;
+    margin: 1rem;
+  }
+
+  &-left {
+    width: 40%;
+  }
+  &-right {
+    flex: 1;
+    text-align: center;
+
+    .description {
+      font-size: 1.25rem;
+      font-style: italic;
+      color: $color-secondary;
+      text-align: justify;
+    }
+
+    .description::first-letter {
+      padding-left: 50px;
+    }
+  }
+}

@@ -37,14 +37,27 @@ p {
   padding: 0;
 }
 
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 // MIXINS
-@mixin flex($justify: flex-start, $align: flex-start) {
+@mixin flex($justify: flex-start, $align: flex-start, $direction: row) {
   display: flex;
   justify-content: $justify;
   align-items: $align;
+  flex-direction: $direction;
 }
 
 @mixin border($color: $color-primary, $radius: 0) {
   border: 3px solid $color;
   border-radius: $radius;
+}
+
+@mixin md {
+  @media (min-width: 768px) {
+    @content;
+  }
 }
