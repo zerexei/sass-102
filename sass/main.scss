@@ -1,0 +1,38 @@
+// VARIABLES
+$color-primary: lightskyblue;
+$color-secondary: lightgray;
+$color-danger: crimson;
+$color-warning: gold;
+
+$font-sm: 0.875rem;
+$font-normal: 1rem;
+$font-md: 1.25rem;
+$font-lg: 1.5rem;
+
+body {
+  background-color: #4c4c4c;
+  font-size: 16px;
+}
+
+.bug {
+  border: 1px solid red;
+}
+
+.nav {
+  // $color-tertiary: red !global; // make global variable (!NOTE: never use, hard to maintain)
+  background-color: $color-primary;
+}
+.banner {
+  h2 {
+    font-size: $font-lg;
+    color: $color-secondary;
+    text-align: center;
+  }
+}
+.footer {
+  h3 {
+    font-size: $font-md;
+    color: $color-secondary;
+    text-align: center;
+  }
+}
