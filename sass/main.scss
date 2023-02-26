@@ -1,3 +1,8 @@
+/** !NOTE: 
+  - max of 2 dept
+  - never use !globals/!important
+*/
+
 // VARIABLES
 $color-primary: lightskyblue;
 $color-secondary: lightgray;
@@ -21,6 +26,19 @@ body {
 .nav {
   // $color-tertiary: red !global; // make global variable (!NOTE: never use, hard to maintain)
   background-color: $color-primary;
+
+  ul {
+    li {
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 }
 .banner {
   h2 {
