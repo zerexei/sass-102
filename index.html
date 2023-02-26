@@ -1,3 +1,7 @@
+<!-- 
+  NOTE: next lesson +> ep 26
+ -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -19,6 +23,44 @@
   </head>
   <body>
     <div id="app" x-init="{ count: 0 }">
+      <!-- Navbar -->
+      <nav>
+        <input type="checkbox" id="check" class="checkbox" hidden />
+        <div class="hamburger-menu">
+          <label for="check" class="menu">
+            <div class="menu-line menu-line-1"></div>
+            <div class="menu-line menu-line-2"></div>
+            <div class="menu-line menu-line-3"></div>
+          </label>
+        </div>
+
+        <div class="navbar-navigation">
+          <div class="navbar-navigation-left">
+            <template x-for="n in [1,2,3]">
+              <figure :class="`left-img left-img-${n}`">
+                <img
+                  :src="`https://picsum.photos/id/${n+10}/200`"
+                  alt="navbar image"
+                />
+              </figure>
+            </template>
+          </div>
+
+          <div class="navbar-navigation-right">
+            <template
+              x-for="link in ['Home','About Us', 'Gallery', 'Reservation', 'Services', 'Contact Us']"
+            >
+              <ul class="nav-list">
+                <li class="nav-list-item">
+                  <a href="#" class="nav-list-link" x-text="link"></a>
+                </li>
+              </ul>
+            </template>
+          </div>
+        </div>
+      </nav>
+      <!-- End of Navbar -->
+
       <!-- HEADER -->
       <header class="header">
         <!-- BRAND -->
