@@ -11,12 +11,17 @@
   @include flex;
 
   &-left {
+    display: none;
     position: fixed;
     left: -50vw;
     width: 50vw;
     height: 100vh;
     background-color: $color-dark;
     transition: left 0.4s;
+
+    @include md {
+      display: block;
+    }
 
     .left-img {
       width: 300px;
@@ -43,13 +48,18 @@
 
   &-right {
     position: fixed;
-    right: -50vw;
-    width: 50vw;
+    right: -100vw;
     height: 100vh;
+    width: 100%;
     background-color: #1f1d1d;
     transition: right 0.4s;
 
     @include flex($justify: center, $align: center, $direction: column);
+
+    @include md {
+      width: 50vw;
+    right: -50vw;
+    }
   }
 
   .nav-list {
@@ -126,8 +136,11 @@
 }
 
 .about-us {
+  @include flex($align: center, $direction: column);
   height: 90vh;
   padding: 0 2rem;
+  margin: 2.5rem 0;
+
   @include md {
     @include flex($align: center);
     gap: 1rem;
@@ -139,17 +152,29 @@
   }
 
   &-left {
-    width: 40%;
+    flex: 1;
+
+    @include md {
+      width: 40%;
+    }
+
+    &-image img {
+      border-radius: 5px;
+    }
   }
   &-right {
     flex: 1;
     text-align: center;
 
     .description {
-      font-size: 1.25rem;
       font-style: italic;
       color: $color-secondary;
       text-align: justify;
+      font-size: 18px;
+
+      @include md {
+        // font-size: 1.25rem;
+      }
     }
 
     .description::first-letter {
@@ -162,6 +187,12 @@
   .cards-wrapper {
     @include flex($justify: center);
     flex-wrap: wrap;
+
+    // gap: 1rem;
+
+    @include md {
+      gap: 0;
+    }
   }
 }
 
@@ -172,12 +203,13 @@
   &-header {
     @include flex($align: center);
     gap: 1rem;
+    margin-bottom: 1rem;
   }
 
   .social-media {
     @include flex($justify: space-between);
     width: 300px;
-    margin-bottom: 70px;
+    margin-bottom: 5rem;
 
     &-item {
       list-style: none;
@@ -187,9 +219,13 @@
       text-decoration: none;
       color: $color-secondary;
       transition: color 0.7s;
+      padding: 0.5rem;
+      @include border($color: $color-light, $radius: 5px);
+      @include flex($justify: center, $align: center);
 
       &:hover {
         color: $color-primary;
+        @include border($color: $color-primary, $radius: 5px);
       }
     }
   }
