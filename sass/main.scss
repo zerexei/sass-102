@@ -26,3 +26,41 @@
   height: 6.5rem;
   width: 6.5rem;
 }
+
+.interpolation {
+  $b: 'border';
+  $c: 'color';
+
+  h2 {
+    box-sizing: #{$b}-box;
+    #{$b}: 1px solid red;
+    #{$c}: red;
+    background-#{$c}: green;
+  }
+}
+
+.for-loops {
+  $colors: (
+    1: red,
+    2: blue,
+    3: yellow,
+    4: black,
+    5: white,
+  );
+
+  @for $i from 1 to 6 {
+    .para-#{$i} {
+      background-color: map-get($map: $colors, $key: $i);
+    }
+  }
+}
+
+.each-loops {
+  $colors: red blue yellow black white;
+
+  @each $color in $colors {
+    .para-#{$color} {
+      background-color: $color;
+    }
+  }
+}

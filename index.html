@@ -1,5 +1,16 @@
 <!-- 
   NOTE: next lesson +> ep 26
+
+  ### Data types
+  - numbers
+  - strings
+  - colors
+  - lists
+  - maps
+    - $red-map: (light: #e57373, medium: #f44336, dark: #b71c1c);
+    - color: map-get($red-map, light);
+  - booleans
+  - null
  -->
 
 <!DOCTYPE html>
@@ -23,6 +34,27 @@
   </head>
   <body>
     <div id="app" x-init="{ count: 0 }">
+      <!-- interpolation -->
+
+      <div class="each-loops">
+        <p class="para-red">each para-1</p>
+        <p class="para-blue">each para-2</p>
+        <p class="para-yellow">each para-3</p>
+        <p class="para-black">each para-4</p>
+        <p class="para-white">each para-5</p>
+      </div>
+
+      <div class="for-loops">
+        <p class="para-1">for para-1</p>
+        <p class="para-2">for para-2</p>
+        <p class="para-3">for para-3</p>
+        <p class="para-4">for para-4</p>
+        <p class="para-5">for para-5</p>
+      </div>
+      <div class="interpolation">
+        <h2>John Doe</h2>
+      </div>
+
       <!-- Navbar -->
       <nav>
         <input type="checkbox" id="check" class="checkbox" hidden />
