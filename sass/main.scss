@@ -64,3 +64,22 @@
     }
   }
 }
+
+.if {
+  @mixin heading-size($size) {
+    @if ($size == 'lg') {
+      font-size: 1.5rem;
+    } @else if ($size == 'md') {
+      font-size: 1.25rem;
+    } @else {
+      font-size: 1rem;
+    }
+  }
+
+  h2 {
+    @if (2 < 4) {
+      color: red;
+      @include heading-size('lg');
+    }
+  }
+}
