@@ -1,16 +1,5 @@
 <!-- 
-  NOTE: next lesson +> ep 34
-
-  ### Data types
-  - numbers
-  - strings
-  - colors
-  - lists
-  - maps
-    - $red-map: (light: #e57373, medium: #f44336, dark: #b71c1c);
-    - color: map-get($red-map, light);
-  - booleans
-  - null
+  NOTE: next lesson +> ep 45
  -->
 
 <!DOCTYPE html>
@@ -21,196 +10,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
 
+    <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Open+Sans:wght@300;400;500;600;700&family=Tilt+Warp&display=swap"
       rel="stylesheet"
     />
 
     <link rel="stylesheet" href="/sass/main.scss" />
 
-    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="https://unpkg.com/alpinejs" defer></script>
+    <script type="module" src="/main.js" defer></script>
   </head>
   <body>
     <div id="app" x-init="{ count: 0 }">
-      <!-- interpolation -->
-
-      <div class="if">
-        <h2>if directive</h2>
-
-      </div>
-
-      <div class="each-loops">
-        <p class="para-red">each para-1</p>
-        <p class="para-blue">each para-2</p>
-        <p class="para-yellow">each para-3</p>
-        <p class="para-black">each para-4</p>
-        <p class="para-white">each para-5</p>
-      </div>
-
-      <div class="for-loops">
-        <p class="para-1">for para-1</p>
-        <p class="para-2">for para-2</p>
-        <p class="para-3">for para-3</p>
-        <p class="para-4">for para-4</p>
-        <p class="para-5">for para-5</p>
-      </div>
-      <div class="interpolation">
-        <h2>John Doe</h2>
-      </div>
-
-      <!-- Navbar -->
-      <nav>
-        <input type="checkbox" id="check" class="checkbox" hidden />
-        <div class="hamburger-menu">
-          <label for="check" class="menu">
-            <div class="menu-line menu-line-1"></div>
-            <div class="menu-line menu-line-2"></div>
-            <div class="menu-line menu-line-3"></div>
-          </label>
+      <header class="app__header">
+        <div class="logo">
+          <figure class="logo__wrapper">
+            <img src="" alt="" class="logo__img" />
+          </figure>
         </div>
 
-        <div class="navbar-navigation">
-          <div class="navbar-navigation-left">
-            <template x-for="n in [1,2,3]">
-              <figure :class="`left-img left-img-${n}`">
-                <img
-                  :src="`https://picsum.photos/id/${n+10}/200`"
-                  alt="navbar image"
-                />
-              </figure>
-            </template>
-          </div>
-
-          <div class="navbar-navigation-right">
+        <nav class="first-nav">
+          <ul class="first-nav__list">
             <template
-              x-for="link in ['Home','About Us', 'Gallery', 'Reservation', 'Services', 'Contact Us']"
+              x-for="x in ['Search','Contact Us', 'Sign In','Cart (0)']"
             >
-              <ul class="nav-list">
-                <li class="nav-list-item">
-                  <a href="#" class="nav-list-link" x-text="link"></a>
-                </li>
-              </ul>
+              <li class="first-nav__item">
+                <a href="#" class="first-nav__link" x-text="x"></a>
+              </li>
             </template>
-          </div>
-        </div>
-      </nav>
-      <!-- End of Navbar -->
+          </ul>
+        </nav>
 
-      <!-- HEADER -->
-      <header class="header">
-        <!-- BRAND -->
-        <div class="brand">
-          <!-- LOGO -->
-          <a href="#" class="logo">
-            <span class="icon" data-size="md"></span>
-          </a>
-
-          <!-- BRAND INFO -->
-          <div>
-            <h1 class="main-name">John</h1>
-            <p class="sub-name">Restaurant</p>
-          </div>
+        <div class="heading">
+          <h1 class="heading-text">John Store</h1>
         </div>
 
-        <!-- HEADER BANNER -->
-        <div class="header-banner">
-          <h1 class="main-heading">Welcome</h1>
-          <h3 class="sub-heading">Try Great John Dishes</h3>
-          <button class="main-btn">Reservation</button>
-        </div>
-      </header>
-      <!-- End of Header -->
-
-      <main>
-        <!-- About Us -->
-        <section class="about-us">
-          <div class="about-us-left">
-            <figure class="about-us-left-image">
-              <img src="https://picsum.photos/500/300" alt="about us image" />
-            </figure>
-          </div>
-          <div class="about-us-right">
-            <h1 class="main-heading">About Us</h1>
-            <h3 class="sub-heading">Intro of John Dishes</h3>
-            <div class="stars">
-              <span class="icon" data-size="xs"></span>
-              <span class="icon" data-size="xs"></span>
-              <span class="icon" data-size="xs"></span>
-            </div>
-            <p class="description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Temporibus mollitia, nulla qui, magnam quidem earum debitis
-              dolorem vel, tempora a blanditiis illum. Quae quis quibusdam
-              commodi aut, nihil iure quas.
-            </p>
-            <div class="stars">
-              <span class="icon" data-size="xs"></span>
-              <span class="icon" data-size="xs"></span>
-              <span class="icon" data-size="xs"></span>
-            </div>
-            <button class="main-btn">Read More</button>
-          </div>
-        </section>
-        <!-- End of About Us -->
-
-        <!-- GALLERY -->
-        <section class="gallery">
-          <div class="cards-wrapper">
-            <template x-for="n in [1,2,3,4,5,6]">
-              <div class="card">
-                <div class="card-overlay">
-                  <div class="card-overlay-heading">Food Name</div>
-                  <p class="card-overlay-paragraph">price: $50</p>
-                  <button class="card-overlay-btn">Order Now</button>
-                </div>
-                <figure class="card-img">
-                  <img src="https://picsum.photos/200" alt="card image" />
-                </figure>
-              </div>
-            </template>
-          </div>
-        </section>
-        <!-- End of Gallery -->
-      </main>
-
-      <!-- FOOTER -->
-      <footer class="footer">
-        <!-- Footer Header -->
-        <div class="footer-header">
-          <!-- Logo -->
-          <a href="#" class="logo">
-            <span class="icon" data-size="md"></span>
-          </a>
-
-          <!-- Brand Info -->
-          <div>
-            <h1 class="main-name">John</h1>
-            <p class="sub-name">Restaurant</p>
-          </div>
-        </div>
-
-        <div class="footer-social-media">
-          <ul class="social-media">
-            <template x-for="n in [1,2,3]">
-              <li class="social-media-item">
-                <a href="#" class="social-media-link">
-                  <span class="icon" data-size="xs"></span>
+        <nav class="second-nav">
+          <ul class="second-nav__list">
+            <template
+              x-for="x in ['Shop','Gift Ideas', 'About Us','Our Team', 'News']"
+            >
+              <li class="second-nav__item dropdown__li">
+                <a href="#" class="first-nav__link">
+                  <span x-text="x"></span>
+                  <ul class="dropdown">
+                    <li class="dropdown__item">
+                      <a href="" class="dropdown__link">Under ₱25</a>
+                    </li>
+                    <li class="dropdown__item">
+                      <a href="" class="dropdown__link">Under ₱50</a>
+                    </li>
+                    <li class="dropdown__item">
+                      <a href="" class="dropdown__link">Above ₱50</a>
+                    </li>
+                  </ul>
                 </a>
               </li>
             </template>
           </ul>
-        </div>
+        </nav>
+      </header>
 
-        <div class="footer-copyright">
-          <p class="footer-copyright-paragraph">
-            &copy; Copyright. Restaurant "John Doe". All Rights reserved 2023
-          </p>
-        </div>
-      </footer>
-      <!-- End of Footer -->
+      <main class="app__main">
+        <section class="slideshow">
+          <template x-for="x in [1,2,3,4,5]">
+            <div class="slideshow__slide">
+              <div class="slideshow__content">
+                <h2 x-text="`slide ${x}`"></h2>
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Quasi consectetur optio porro esse dolorum aut corporis
+                  laboriosam cum pariatur numquam earum, facilis illo eum
+                  similique. Consequatur consectetur excepturi modi qui.
+                </p>
+              </div>
+              <figure><img src="" alt="" /></figure>
+            </div>
+          </template>
+        </section>
+      </main>
+
+      <footer class="app__footer"></footer>
     </div>
-    <script type="module" src="/main.js"></script>
   </body>
 </html>

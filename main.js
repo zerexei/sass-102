@@ -1,3 +1,8 @@
+const imgs = [...document.querySelectorAll('img')];
+imgs.forEach((img) => {
+  img.src = 'https://picsum.photos/200';
+});
+
 const icons = [...document.querySelectorAll('.icon')];
 
 icons.forEach((icon) => {
